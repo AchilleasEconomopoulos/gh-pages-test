@@ -15,3 +15,6 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 baseurl: "/gh-pages-test"  # important if not a user/org site
 url: "https://achilleaseconomopoulos.github.io"
+header_pages:
+  - index.md
+  - about.md
