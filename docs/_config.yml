@@ -1,8 +1,10 @@
 lsi: false
 safe: true
 source: .
-title: My Site
+title: Stack & SDK Guide
 description: My GitHub Pages site
+logo: "/assets/oasees-logo.png"
+# favicon: "/favicon.ico"
 incremental: false
 highlighter: rouge
 gist:
@@ -10,11 +12,19 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+# remote_theme: pages-themes/cayman@v0.2.0
+# plugins:
+# - jekyll-remote-theme # add this line to the plugins list if you already have one
 baseurl: "/gh-pages-test"  # important if not a user/org site
 url: "https://achilleaseconomopoulos.github.io"
-header_pages:
-  - index.md
-  - about.md
+theme: just-the-docs
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: purple
+  highlight:
+    title: Important
+    color: yellow

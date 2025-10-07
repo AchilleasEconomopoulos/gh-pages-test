@@ -1,0 +1,8 @@
+{% if site.logo %}
+  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 15px; width: 12.5rem;">
+    <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" style="height: 48px; width: auto;">
+    <span>{{ site.title }}</span>
+  </div>
+{% else %}
+  {{ site.title }}
+{% endif %}
