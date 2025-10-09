@@ -83,4 +83,4 @@ You should see all your worker nodes listed with `Ready` status.
 
 ## Next Steps
 
-With your devices joined to the cluster, you can proceed to [Sample Application](sample-application) to deploy your first application.
+[Back to Stack Installation](stack-installation) | [Continue to Sample Application](sample-application)

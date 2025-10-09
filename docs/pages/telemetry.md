@@ -143,12 +143,6 @@ kubectl get pods | grep collector
 - Avoid changing alphanumeric strings (like timestamps with date)
 - Ensure sensor containers are running: `kubectl get pods`
 
-## Best Practices
-
-1. **Use Consistent Naming**: Use the same metric index name across all collectors
-2. **Document Endpoints**: Keep track of which endpoints belong to which services
-3. **Monitor Collector Health**: Periodically check collector pods are running
-4. **Numeric Metrics Only**: Ensure your metrics endpoints return int/float values
 
 ## Related Video
 
@@ -156,4 +150,4 @@ kubectl get pods | grep collector
 
 ## Next Steps
 
-With telemetry collecting metrics, proceed to [DAO Operations](dao-operations) to create and manage DAOs.
+[Back to Sample Application](sample-application) | [Continue to DAO Operations](dao-operations)

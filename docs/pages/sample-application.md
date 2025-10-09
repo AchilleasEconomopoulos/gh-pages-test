@@ -19,7 +19,7 @@ The sample application is a containerized sensor monitoring system that demonstr
 - Inter-container messaging
 
 {: .note }
-> **Important**: If your application logic works with docker-compose, it will work when deployed from OASEES.
+> If your application logic works with docker-compose, it will work when deployed from OASEES.
 
 ## Application Components
 
@@ -59,7 +59,7 @@ def metrics():
     })
 ```
 
-{: .important }
+{: .highlight }
 > Any **integer or float field** will be considered a metric by the collector. Avoid alphanumeric strings that change (like timestamps), as this will cause collector issues.
 
 ## Action Endpoint
@@ -110,43 +110,6 @@ The docker-compose.yaml requires OASEES labels for proper scheduling:
 - `oasees.ui.port`: Port for the dashboard/UI (required if `oasees.ui` is true)
 - `oasees.sensor`: Specify if the application uses camera, microphone, etc.
 
-### Example: Common docker-compose.yaml
-
-```yaml
-version: '3.8'
-
-services:
-  dashboard:
-    image: oasees/sample-app-ui
-    ports:
-      - "5000:5000"
-    depends_on:
-      - vibration-sensor
-      - thermal-sensor
-      - pressure-sensor
-      - flow-sensor
-    environment:
-      - SENSORS=vibration-sensor:5000,thermal-sensor:5000,pressure-sensor:5000,flow-sensor:5000
-    networks:
-      - sensor-network
-
-  vibration-sensor:
-    image: oasees/sample-app-sensor
-    environment:
-      - SENSOR_TYPE=vibration
-      - SENSOR_NAME=Vibration Monitor
-      - PORT=5000
-    ports:
-      - "5000:5000"
-    networks:
-      - sensor-network
-
-  # ... other sensors
-
-networks:
-  sensor-network:
-    driver: bridge
-```
 
 ### Example: OASEES docker-compose.yaml
 
@@ -264,7 +227,7 @@ Service: vibration-sensor | Port: 32687 | Node: device1
 The application UI will be visible in the OASEES portal under the "App" section.
 
 
-![Sample-App](/assets/sample-app.png)
+![Sample-App](../assets/sample-app.png)
 
 
 ## Application Notes
@@ -281,4 +244,4 @@ The application UI will be visible in the OASEES portal under the "App" section.
 
 ## Next Steps
 
-With your application deployed, proceed to [Telemetry](telemetry) to set up metrics collection.
+[Back to Joining Devices](joining-devices) | [Continue to Telemetry](telemetry)

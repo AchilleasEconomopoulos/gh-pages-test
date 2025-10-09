@@ -101,7 +101,7 @@ oasees-sdk mlops init-example-pytorch example1
 oasees-sdk mlops init-example-tensorflow example1
 ```
 
-![Notebook-MLOps](/assets/notebook.png)
+![Notebook-MLOps](../assets/notebook.png)
 
 This creates a project folder with:
 - `<project>_client.ipynb`: Training pipeline notebook

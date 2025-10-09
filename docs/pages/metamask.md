@@ -84,19 +84,19 @@ permalink: /prerequisites/metamask
 
 **1. Import one of your given accounts via its Private Key**
 
-![image](/assets/metamask-images/metamask1.png)
+![image](../assets/metamask-images/metamask1.png)
 
-![image](/assets/metamask-images/metamask2.png)
+![image](../assets/metamask-images/metamask2.png)
 
-![image](/assets/metamask-images/metamask3.png)
+![image](../assets/metamask-images/metamask3.png)
 
 <br>
 
 **2. Add the OASEES Network as a custom network**
 
-![image](/assets/metamask-images/metamask4.png)
+![image](../assets/metamask-images/metamask4.png)
 
-![image](/assets/metamask-images/metamask5.png)
+![image](../assets/metamask-images/metamask5.png)
 
 - Network name: `oasees-net` (or whichever name you want)
 - Default RPC URL: `http://<BLOCKCHAIN_IP>:8545`

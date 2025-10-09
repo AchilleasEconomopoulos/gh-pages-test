@@ -13,7 +13,7 @@ Create and manage Decentralized Autonomous Organizations (DAOs) for your device 
 
 ### Using the Solidity IDE
 
-![Solidity-IDE](/assets/solidity-ide.png)
+![Solidity-IDE](../assets/solidity-ide.png)
 
 From the OASEES portal, you can create and deploy a DAO using the integrated Solidity IDE:
 
@@ -27,7 +27,7 @@ From the OASEES portal, you can create and deploy a DAO using the integrated Sol
    - **DAO Name**: Choose a descriptive name
    - **DAO Description**: Document your DAO's purpose
    - **Minimum Delay (Blocks)**: Time before proposal execution
-   - **Quorum Percentage**: Minimum participation required
+   - **Quorum Percentage**: Minimum 'For' votes required for the proposal to pass
 
 ### Example Configuration
 
@@ -43,15 +43,8 @@ Percentage of total supply needed for votes to pass: 50%
 
 After deployment, interact with your DAO from the **Home** page of the portal.
 
-![Home-DAO](/assets/home-dao.png)
+![Home-DAO](../assets/home-dao.png)
 
-### DAO Overview
-
-You'll see:
-- DAO name and member count
-- Connected devices in the network
-- Available actions
-- Proposal history
 
 ## Managing Device Membership
 
@@ -65,104 +58,20 @@ You'll see:
    - Enter the desired number of tokens
    - Click **Save**
 
-![DAO Management Interface](../assets/dao-management.png)
+![DAO Management Interface](../assets/dao-manage.png)
 
-{: .important }
-> Vote tokens determine a device's voting power in the DAO. Distribute tokens based on your governance model.
-
-### Vote Token Distribution
-
-Example distribution:
-
-| Device Name | Account | Tokens | Status |
-|------------|---------|---------|---------|
-| device1 | 0x4dAb...BcbF | 10 | Active |
-| device2 | 0x8bB5...4d09 | 15 | Active |
-| device3 | 0x9c5c3...Da88 | 20 | Active |
-| device4 | 0x4de6...5756 | 25 | Active |
-| intel-nuc | 0x7e8...704a | 30 | Active |
 
 ## Creating Proposals
 
 Proposals can be created through:
 
-1. **Portal Interface**: Manually create proposals through the UI
-2. **Agent Configuration**: Automatic proposals based on metrics (see [DAO Workflow](dao-workflow))
+* **Agent Configuration**: Automatic proposals based on metrics
+* **Portal Interface**: Manually create proposals through the UI
 
-### Manual Proposal Creation
+{: .highlight}
+If you want your devices to vote on a manually created proposal, make sure your proposal Title matches one of the device configuration ones (see [DAO Workflow](dao-workflow)). 
 
-1. Navigate to your DAO
-2. Click **Create Proposal**
-3. Fill in:
-   - **Title**: Brief description
-   - **Description**: Detailed explanation
-   - **Action**: What should happen if approved
-4. Submit the proposal
 
-## Viewing Proposals
-
-All proposals are visible in the DAO interface:
-
-- **Active Proposals**: Currently open for voting
-- **Passed Proposals**: Approved and executed
-- **Failed Proposals**: Did not meet quorum or approval threshold
-- **Pending Execution**: Approved but waiting for time lock
-
-## Voting on Proposals
-
-Devices with vote tokens can vote on proposals:
-
-- Vote weight is proportional to token holdings
-- Votes can be: **For**, **Against**, or **Abstain**
-- Voting period is defined in DAO configuration
-
-## DAO Configuration Parameters
-
-### Quorum
-
-Minimum percentage of tokens that must participate:
-
-```
-Quorum = (Total Votes Cast / Total Token Supply) × 100
-```
-
-### Approval Threshold
-
-Percentage of participating votes needed for approval:
-
-```
-Approval = (For Votes / Total Votes Cast) × 100
-```
-
-### Time Lock
-
-Delay between proposal approval and execution (in blocks):
-
-- Allows time for review
-- Provides security against malicious proposals
-- Can be set to 0 for immediate execution
-
-## Best Practices
-
-1. **Token Distribution**:
-   - Distribute tokens based on device importance or capacity
-   - Consider equal distribution for democratic governance
-   - Reserve tokens for future devices
-
-2. **Quorum Settings**:
-   - Higher quorum = more participation required
-   - Lower quorum = faster decision making
-   - Balance between security and efficiency
-
-3. **Time Locks**:
-   - Use longer delays for critical actions
-   - Shorter delays for routine operations
-   - Consider emergency override mechanisms
-
-4. **Proposal Descriptions**:
-   - Be clear and specific
-   - Include expected outcomes
-   - Document any risks
 
 ## Troubleshooting
 
@@ -186,4 +95,4 @@ Delay between proposal approval and execution (in blocks):
 
 ## Next Steps
 
-Learn how to configure automated agent behavior based on metrics in [DAO Workflow](dao-workflow).
+[Back to Telemetry](telemetry) | [Continue to DAO Workflow](dao-workflow)

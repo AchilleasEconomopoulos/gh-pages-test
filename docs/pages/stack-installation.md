@@ -37,7 +37,7 @@ pip install oasees-sdk
 
 ### 2. Provision the Stack
 
-{: .important }
+{: .highlight }
 > Find your master node's IP address first. This is crucial for accessing the OASEES portal from a browser.
 
 Initialize the OASEES stack:
@@ -120,4 +120,4 @@ kube-system            coredns-5bb8b6b7fde-x4vwr                   1/1     Runni
 
 ## Next Steps
 
-With the stack running and your join token ready, proceed to [Joining Devices](joining-devices).
+[Back to Metamask Configuration](metamask) | [Continue to Joining Devices](joining-devices)

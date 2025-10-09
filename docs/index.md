@@ -4,11 +4,17 @@ title: Home
 nav_order: 1
 ---
 
+{: .highlight}
+> Make sure you have the latest version of the OASEES SDK with ```pip install -U oasees-sdk```
+> 
+> From version 0.7.1 and above, you can regularly run ```oasees-sdk update``` to ensure you have all the latest stack components installed.
+
 # OASEES Stack & SDK Guide
+
 
 Welcome to the OASEES Stack & SDK documentation. This guide provides comprehensive instructions for deploying and managing the OASEES platform.
 
-{: .highlight }
+{: .note }
 > Due to this version of the guide being public, the Blockchain IP address and the blockchain accounts' private keys will not be provided here.
 > In order to retrieve them please refer to the initial OASEES Stack & SDK Guide distributed via email, or reach us on Slack.
 
@@ -27,7 +33,6 @@ This documentation covers:
 ## Quick Navigation
 
 1. [Prerequisites](prerequisites) - Important setup requirements
-2. [VPN Connection](vpn-connection) - Connecting to the network
 3. [Stack Installation](stack-installation) - Installing the OASEES stack
 4. [Joining Devices](joining-devices) - Adding worker nodes
 5. [Sample Application](sample-application) - Understanding and deploying the sample app
@@ -39,3 +44,7 @@ This documentation covers:
 ## Getting Started
 
 Before you begin, make sure you review the [Prerequisites](prerequisites) page to ensure your environment is properly configured.
+
+## Next Steps
+
+[Continue to Prerequisites](prerequisites)

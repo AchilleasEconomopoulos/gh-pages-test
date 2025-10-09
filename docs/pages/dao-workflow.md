@@ -41,7 +41,8 @@ This generates `config.json` with the following structure:
             "action_endpoint": "",
             "args": {}
         }
-    }
+    },
+    "leader": ""
 }
 ```
 
@@ -54,8 +55,9 @@ This generates `config.json` with the following structure:
 | `propose_on.proposal_contents` | Message and action value for the proposal |
 | `propose_on.positive_vote_on` | Conditions for voting YES |
 | `actions_map` | Maps DAO action values to actual API calls |
+| `leader` (**Optional**) | Pick a single specific device to execute the API call |
 
-{: .important }
+{: .highlight }
 > The three `propose_on` subfields are **lists with one-to-one binding**. They must have equal numbers of elements. The 2nd event binds to the 2nd proposal_content and 2nd positive_vote_on condition.
 
 ## Example Configuration
@@ -108,7 +110,8 @@ This generates `config.json` with the following structure:
                 "duration": 15
             }
         }
-    }
+    },
+    "leader": "device_name"
 }
 ```
 
@@ -214,52 +217,32 @@ print(response.json())
 
 ## Advanced Configuration
 
-### Multiple Conditions
+### Complex Proposal / Voting Logic
 
-Use multiple event/proposal/vote combinations:
+Combine multiple metrics in conditions:
 
-```json
-{
-    "metric_index": "swarm_metrics",
-    "propose_on": {
-        "events": [
-            "thermal_value > 99",
-            "pressure_value > 60",
-            "vibration_value > 50",
-            "flow_value < 5"
-        ],
-        "proposal_contents": [
-            {"msg": "High Temperature", "action_value": 1},
-            {"msg": "High Pressure", "action_value": 2},
-            {"msg": "Excessive Vibration", "action_value": 3},
-            {"msg": "Low Flow", "action_value": 4}
-        ],
-        "positive_vote_on": [
-            "flow_value > 7",
-            "thermal_value < 50",
-            "pressure_value < 40",
-            "thermal_value > 80"
-        ]
-    },
-    "actions_map": {
-        "1": { /* ... */ },
-        "2": { /* ... */ },
-        "3": { /* ... */ },
-        "4": { /* ... */ }
-    }
-}
-```
+- **Same device metrics**: Use `and`/`or` operators (`and` takes precedence)
+- **Different device metrics**: Separate with comma (`,`)
 
-### Complex Voting Logic
+#### Example
 
-Combine multiple metrics in voting conditions:
+- **Setup**: The [sample application](sample-application) with 2 devices as participants.
+    - Device1 is responsible for the flow sensor
+    - Device2 is responsible for the thermal and pressure sensors.
 
+- **Conditions**:
+    - Device1 votes yes on: flow_value > 10
+    - Device2 votes yes on: thermal_value > 80 && pressure_value < 20
+
+- **Config syntax**:
 ```json
 "positive_vote_on": [
-    "flow_value > 7 and thermal_value < 80",
-    "pressure_value < 40 or vibration_value < 30"
+    "flow_value > 10, thermal_value > 80 and pressure_value < 20",
 ]
 ```
+
+{: .warning}
+> If a device's metric isn't included in the voting conditions, the current default behavior is to vote AGAINST.
 
 ## Troubleshooting
 
@@ -298,4 +281,4 @@ Combine multiple metrics in voting conditions:
 
 ## Next Steps
 
-Explore [MLops & Federated Learning](mlops-federated-learning) to train models using data from your devices.
+[Back to DAO Operations](dao-operations) | [Continue to MLops & Federated Learning](mlops-federated-learning)
