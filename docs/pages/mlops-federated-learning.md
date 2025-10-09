@@ -321,35 +321,6 @@ oasees-sdk mlops ipfs-rm path/to/file
 oasees-sdk mlops ipfs-stat path/to/file
 ```
 
-## Best Practices
-
-### Data Preparation
-
-1. **Consistent Format**: Ensure all devices use the same data format
-2. **Normalized Data**: Normalize features before training
-3. **Balanced Distribution**: Distribute data evenly across devices when possible
-4. **Version Control**: Tag datasets with versions
-
-### Training Configuration
-
-1. **Start Small**: Begin with few rounds and epochs
-2. **Monitor Resources**: Check device CPU/memory during training
-3. **Incremental Testing**: Test with 2 devices before scaling
-4. **Document Hyperparameters**: Keep track of successful configurations
-
-### Model Deployment
-
-1. **Test Locally**: Validate model before deployment
-2. **Version Models**: Use timestamp or version in model names
-3. **Monitor Performance**: Check inference latency and accuracy
-4. **Resource Limits**: Set appropriate CPU/memory limits
-
-### Pipeline Development
-
-1. **Use Synthetic Data**: Test pipelines without touching real data
-2. **Modular Code**: Keep training and deployment logic separate
-3. **Error Handling**: Include try-except blocks for robustness
-4. **Logging**: Add logging for debugging
 
 ## Troubleshooting
 
@@ -437,7 +408,6 @@ kubectl delete pod,svc -l tag=model --force
 
 - [Flower Framework Documentation](https://flower.dev/docs/)
 - [OASEES Sample App Repository](https://github.com/oasees/Oasees-Sample-app)
-- [Federated Learning Best Practices](https://arxiv.org/abs/1912.04977)
 
 ---
 

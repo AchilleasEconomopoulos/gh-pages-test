@@ -267,14 +267,6 @@ Combine multiple metrics in conditions:
 - Ensure DAO quorum is achievable
 - Review blockchain transactions
 
-## Best Practices
-
-1. **Test Incrementally**: Start with simple conditions and expand
-2. **Monitor Logs**: Keep track of agent behavior
-3. **Document Actions**: Clearly document what each action does
-4. **Set Realistic Thresholds**: Base metric thresholds on actual data
-5. **Plan for Failures**: Include error handling in action endpoints
-
 ## Related Video
 
 - [6.configure-agents-DAO-flow.mp4](https://nocncsrd.sharepoint.com/:v:/r/sites/OASEES2/Shared%20Documents/WP5/OASEES%20STACK%20%26%20SDK%20GUIDE/7.configure-agents-DAO-flow.mp4?csf=1&web=1&e=vUj6QD)
